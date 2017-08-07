@@ -96,7 +96,8 @@ var FixedDataTableColumnResizeHandle = createReactClass({
       this._mouseMoveTracker.captureMouseMoves(newProps.initialEvent);
       this.setState({
         width: newProps.initialWidth,
-        cursorDelta: newProps.initialWidth
+        cursorDelta: newProps.initialWidth,
+        columnKey: newProps.columnKey
       });
     }
   },
@@ -154,6 +155,8 @@ var FixedDataTableColumnResizeHandle = createReactClass({
       width: newColumnWidth,
       cursorDelta: newWidth
     });
+
+    this.props.onColumnResizeEnd(newColumnWidth, this.state.columnKey);
   },
 
   _onColumnResizeEnd() {

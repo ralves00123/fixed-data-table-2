@@ -187,15 +187,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _FixedDataTable2 = _interopRequireDefault(_FixedDataTable);
 
-	var _FixedDataTableCellDefault = __webpack_require__(81);
+	var _FixedDataTableCellDefault = __webpack_require__(90);
 
 	var _FixedDataTableCellDefault2 = _interopRequireDefault(_FixedDataTableCellDefault);
 
-	var _FixedDataTableColumn = __webpack_require__(79);
+	var _FixedDataTableColumn = __webpack_require__(91);
 
 	var _FixedDataTableColumn2 = _interopRequireDefault(_FixedDataTableColumn);
 
-	var _FixedDataTableColumnGroup = __webpack_require__(78);
+	var _FixedDataTableColumnGroup = __webpack_require__(92);
 
 	var _FixedDataTableColumnGroup2 = _interopRequireDefault(_FixedDataTableColumnGroup);
 
@@ -5545,7 +5545,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	      };
 	    } else {
-	      if (true) {
+	      if (false) {
 	        console.error('Attempted to listen to events during the capture phase on a ' + 'browser that does not support the capture phase. Your application ' + 'will not receive some events.');
 	      }
 	      return {
@@ -6047,7 +6047,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 
 	var invariant = function invariant(condition, format, a, b, c, d, e, f) {
-	  if (true) {
+	  if (false) {
 	    if (format === undefined) {
 	      throw new Error('invariant requires an error message argument');
 	    }
@@ -7668,7 +7668,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _createClass(FixedDataTableColumnGroup, [{
 	    key: 'render',
 	    value: function render() {
-	      if (true) {
+	      if (false) {
 	        throw new Error('Component <FixedDataTableColumnGroup /> should never render');
 	      }
 	      return null;
@@ -7768,7 +7768,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _createClass(FixedDataTableColumn, [{
 	    key: 'render',
 	    value: function render() {
-	      if (true) {
+	      if (false) {
 	        throw new Error('Component <FixedDataTableColumn /> should never render');
 	      }
 	      return null;
@@ -9683,6 +9683,475 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	module.exports = debounce;
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _React = __webpack_require__(29);
+
+	var _React2 = _interopRequireDefault(_React);
+
+	var _propTypes = __webpack_require__(39);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	var _cx = __webpack_require__(62);
+
+	var _cx2 = _interopRequireDefault(_cx);
+
+	var _joinClasses = __webpack_require__(82);
+
+	var _joinClasses2 = _interopRequireDefault(_joinClasses);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Copyright Schrodinger, LLC
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * All rights reserved.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * This source code is licensed under the BSD-style license found in the
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * LICENSE file in the root directory of this source tree. An additional grant
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * of patent rights can be found in the PATENTS file in the same directory.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @providesModule FixedDataTableCellDefault
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @typechecks
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+	/**
+	 * Component that handles default cell layout and styling.
+	 *
+	 * All props unless specified below will be set onto the top level `div`
+	 * rendered by the cell.
+	 *
+	 * Example usage via from a `Column`:
+	 * ```
+	 * const MyColumn = (
+	 *   <Column
+	 *     cell={({rowIndex, width, height}) => (
+	 *       <Cell
+	 *         width={width}
+	 *         height={height}
+	 *         className="my-class">
+	 *         Cell number: <span>{rowIndex}</span>
+	*        </Cell>
+	 *     )}
+	 *     width={100}
+	 *   />
+	 * );
+	 * ```
+	 */
+	var FixedDataTableCellDefault = function (_React$Component) {
+	  _inherits(FixedDataTableCellDefault, _React$Component);
+
+	  function FixedDataTableCellDefault() {
+	    _classCallCheck(this, FixedDataTableCellDefault);
+
+	    return _possibleConstructorReturn(this, (FixedDataTableCellDefault.__proto__ || Object.getPrototypeOf(FixedDataTableCellDefault)).apply(this, arguments));
+	  }
+
+	  _createClass(FixedDataTableCellDefault, [{
+	    key: 'render',
+	    value: function render() {
+	      //Remove some props like columnKey and rowIndex so we don't pass it into the div
+	      var _props = this.props,
+	          height = _props.height,
+	          width = _props.width,
+	          style = _props.style,
+	          className = _props.className,
+	          children = _props.children,
+	          columnKey = _props.columnKey,
+	          rowIndex = _props.rowIndex,
+	          props = _objectWithoutProperties(_props, ['height', 'width', 'style', 'className', 'children', 'columnKey', 'rowIndex']);
+
+	      var innerStyle = _extends({
+	        height: height,
+	        width: width
+	      }, style);
+
+	      return _React2.default.createElement(
+	        'div',
+	        _extends({}, props, {
+	          className: (0, _joinClasses2.default)((0, _cx2.default)('fixedDataTableCellLayout/wrap1'), (0, _cx2.default)('public/fixedDataTableCell/wrap1'), className),
+	          style: innerStyle }),
+	        _React2.default.createElement(
+	          'div',
+	          {
+	            className: (0, _joinClasses2.default)((0, _cx2.default)('fixedDataTableCellLayout/wrap2'), (0, _cx2.default)('public/fixedDataTableCell/wrap2')) },
+	          _React2.default.createElement(
+	            'div',
+	            {
+	              className: (0, _joinClasses2.default)((0, _cx2.default)('fixedDataTableCellLayout/wrap3'), (0, _cx2.default)('public/fixedDataTableCell/wrap3')) },
+	            _React2.default.createElement(
+	              'div',
+	              { className: (0, _cx2.default)('public/fixedDataTableCell/cellContent') },
+	              children
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return FixedDataTableCellDefault;
+	}(_React2.default.Component);
+
+	FixedDataTableCellDefault.propTypes = {
+
+	  /**
+	   * Outer height of the cell.
+	   */
+	  height: _propTypes2.default.number,
+
+	  /**
+	   * Outer width of the cell.
+	   */
+	  width: _propTypes2.default.number,
+
+	  /**
+	   * Optional prop that if specified on the `Column` will be passed to the
+	   * cell. It can be used to uniquely identify which column is the cell is in.
+	   */
+	  columnKey: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+
+	  /**
+	   * Optional prop that represents the rows index in the table.
+	   * For the 'cell' prop of a Column, this parameter will exist for any
+	   * cell in a row with a positive index.
+	   *
+	   * Below that entry point the user is welcome to consume or
+	   * pass the prop through at their discretion.
+	   */
+	  rowIndex: _propTypes2.default.number
+	};
+
+
+	module.exports = FixedDataTableCellDefault;
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _React = __webpack_require__(29);
+
+	var _React2 = _interopRequireDefault(_React);
+
+	var _propTypes = __webpack_require__(39);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Copyright Schrodinger, LLC
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * All rights reserved.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * This source code is licensed under the BSD-style license found in the
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * LICENSE file in the root directory of this source tree. An additional grant
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * of patent rights can be found in the PATENTS file in the same directory.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @providesModule FixedDataTableColumn
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @typechecks
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+	/**
+	 * Component that defines the attributes of table column.
+	 */
+	var FixedDataTableColumn = function (_React$Component) {
+	  _inherits(FixedDataTableColumn, _React$Component);
+
+	  function FixedDataTableColumn() {
+	    _classCallCheck(this, FixedDataTableColumn);
+
+	    return _possibleConstructorReturn(this, (FixedDataTableColumn.__proto__ || Object.getPrototypeOf(FixedDataTableColumn)).apply(this, arguments));
+	  }
+
+	  _createClass(FixedDataTableColumn, [{
+	    key: 'render',
+	    value: function render() {
+	      if (false) {
+	        throw new Error('Component <FixedDataTableColumn /> should never render');
+	      }
+	      return null;
+	    }
+	  }]);
+
+	  return FixedDataTableColumn;
+	}(_React2.default.Component);
+
+	FixedDataTableColumn.__TableColumn__ = true;
+	FixedDataTableColumn.propTypes = {
+	  /**
+	   * The horizontal alignment of the table cell content.
+	   */
+	  align: _propTypes2.default.oneOf(['left', 'center', 'right']),
+
+	  /**
+	   * Controls if the column is fixed when scrolling in the X axis.
+	   */
+	  fixed: _propTypes2.default.bool,
+
+	  /**
+	   * The header cell for this column.
+	   * This can either be a string a React element, or a function that generates
+	   * a React Element. Passing in a string will render a default header cell
+	   * with that string. By default, the React element passed in can expect to
+	   * receive the following props:
+	   *
+	   * ```
+	   * props: {
+	   *   columnKey: string // (of the column, if given)
+	   *   height: number // (supplied from the Table or rowHeightGetter)
+	   *   width: number // (supplied from the Column)
+	   * }
+	   * ```
+	   *
+	   * Because you are passing in your own React element, you can feel free to
+	   * pass in whatever props you may want or need.
+	   *
+	   * If you pass in a function, you will receive the same props object as the
+	   * first argument.
+	   */
+	  header: _propTypes2.default.oneOfType([_propTypes2.default.node, _propTypes2.default.func]),
+
+	  /**
+	   * This is the body cell that will be cloned for this column.
+	   * This can either be a string a React element, or a function that generates
+	   * a React Element. Passing in a string will render a default header cell
+	   * with that string. By default, the React element passed in can expect to
+	   * receive the following props:
+	   *
+	   * ```
+	   * props: {
+	   *   rowIndex; number // (the row index of the cell)
+	   *   columnKey: string // (of the column, if given)
+	   *   height: number // (supplied from the Table or rowHeightGetter)
+	   *   width: number // (supplied from the Column)
+	   * }
+	   * ```
+	   *
+	   * Because you are passing in your own React element, you can feel free to
+	   * pass in whatever props you may want or need.
+	   *
+	   * If you pass in a function, you will receive the same props object as the
+	   * first argument.
+	   */
+	  cell: _propTypes2.default.oneOfType([_propTypes2.default.node, _propTypes2.default.func]),
+
+	  /**
+	   * This is the footer cell for this column.
+	   * This can either be a string a React element, or a function that generates
+	   * a React Element. Passing in a string will render a default header cell
+	   * with that string. By default, the React element passed in can expect to
+	   * receive the following props:
+	   *
+	   * ```
+	   * props: {
+	   *   columnKey: string // (of the column, if given)
+	   *   height: number // (supplied from the Table or rowHeightGetter)
+	   *   width: number // (supplied from the Column)
+	   * }
+	   * ```
+	   *
+	   * Because you are passing in your own React element, you can feel free to
+	   * pass in whatever props you may want or need.
+	   *
+	   * If you pass in a function, you will receive the same props object as the
+	   * first argument.
+	   */
+	  footer: _propTypes2.default.oneOfType([_propTypes2.default.node, _propTypes2.default.func]),
+
+	  /**
+	   * This is used to uniquely identify the column, and is not required unless
+	   * you a resizing columns. This will be the key given in the
+	   * `onColumnResizeEndCallback` on the Table.
+	   */
+	  columnKey: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+
+	  /**
+	   * The pixel width of the column.
+	   */
+	  width: _propTypes2.default.number.isRequired,
+
+	  /**
+	   * If this is a resizable column this is its minimum pixel width.
+	   */
+	  minWidth: _propTypes2.default.number,
+
+	  /**
+	   * If this is a resizable column this is its maximum pixel width.
+	   */
+	  maxWidth: _propTypes2.default.number,
+
+	  /**
+	   * The grow factor relative to other columns. Same as the flex-grow API
+	   * from http://www.w3.org/TR/css3-flexbox/. Basically, take any available
+	   * extra width and distribute it proportionally according to all columns'
+	   * flexGrow values. Defaults to zero (no-flexing).
+	   */
+	  flexGrow: _propTypes2.default.number,
+
+	  /**
+	   * Whether the column can be resized with the
+	   * FixedDataTableColumnResizeHandle. Please note that if a column
+	   * has a flex grow, once you resize the column this will be set to 0.
+	   *
+	   * This property only provides the UI for the column resizing. If this
+	   * is set to true, you will need to set the onColumnResizeEndCallback table
+	   * property and render your columns appropriately.
+	   */
+	  isResizable: _propTypes2.default.bool,
+
+	  /**
+	   * Whether the column can be dragged to reorder.
+	   */
+	  isReorderable: _propTypes2.default.bool,
+
+	  /**
+	   * Whether cells in this column can be removed from document when outside
+	   * of viewport as a result of horizontal scrolling.
+	   * Setting this property to true allows the table to not render cells in
+	   * particular column that are outside of viewport for visible rows. This
+	   * allows to create table with many columns and not have vertical scrolling
+	   * performance drop.
+	   * Setting the property to false will keep previous behaviour and keep
+	   * cell rendered if the row it belongs to is visible.
+	   */
+	  allowCellsRecycling: _propTypes2.default.bool,
+
+	  /**
+	   * Flag to enable performance check when rendering. Stops the component from
+	   * rendering if none of it's passed in props have changed
+	   */
+	  pureRendering: _propTypes2.default.bool
+	};
+	FixedDataTableColumn.defaultProps = {
+	  allowCellsRecycling: false,
+	  fixed: false
+	};
+
+
+	module.exports = FixedDataTableColumn;
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _React = __webpack_require__(29);
+
+	var _React2 = _interopRequireDefault(_React);
+
+	var _propTypes = __webpack_require__(39);
+
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Copyright Schrodinger, LLC
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * All rights reserved.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * This source code is licensed under the BSD-style license found in the
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * LICENSE file in the root directory of this source tree. An additional grant
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * of patent rights can be found in the PATENTS file in the same directory.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @providesModule FixedDataTableColumnGroup
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @typechecks
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+	/**
+	 * Component that defines the attributes of a table column group.
+	 */
+	var FixedDataTableColumnGroup = function (_React$Component) {
+	  _inherits(FixedDataTableColumnGroup, _React$Component);
+
+	  function FixedDataTableColumnGroup() {
+	    _classCallCheck(this, FixedDataTableColumnGroup);
+
+	    return _possibleConstructorReturn(this, (FixedDataTableColumnGroup.__proto__ || Object.getPrototypeOf(FixedDataTableColumnGroup)).apply(this, arguments));
+	  }
+
+	  _createClass(FixedDataTableColumnGroup, [{
+	    key: 'render',
+	    value: function render() {
+	      if (false) {
+	        throw new Error('Component <FixedDataTableColumnGroup /> should never render');
+	      }
+	      return null;
+	    }
+	  }]);
+
+	  return FixedDataTableColumnGroup;
+	}(_React2.default.Component);
+
+	FixedDataTableColumnGroup.__TableColumnGroup__ = true;
+	FixedDataTableColumnGroup.propTypes = {
+	  /**
+	   * The horizontal alignment of the table cell content.
+	   */
+	  align: _propTypes2.default.oneOf(['left', 'center', 'right']),
+
+	  /**
+	   * Controls if the column group is fixed when scrolling in the X axis.
+	   */
+	  fixed: _propTypes2.default.bool,
+
+	  /**
+	   * This is the header cell for this column group.
+	   * This can either be a string or a React element. Passing in a string
+	   * will render a default footer cell with that string. By default, the React
+	   * element passed in can expect to receive the following props:
+	   *
+	   * ```
+	   * props: {
+	   *   height: number // (supplied from the groupHeaderHeight)
+	   *   width: number // (supplied from the Column)
+	   * }
+	   * ```
+	   *
+	   * Because you are passing in your own React element, you can feel free to
+	   * pass in whatever props you may want or need.
+	   *
+	   * You can also pass in a function that returns a react elemnt, with the
+	   * props object above passed in as the first parameter.
+	   */
+	  header: _propTypes2.default.oneOfType([_propTypes2.default.node, _propTypes2.default.func])
+
+	};
+	FixedDataTableColumnGroup.defaultProps = {
+	  fixed: false
+	};
+
+
+	module.exports = FixedDataTableColumnGroup;
 
 /***/ })
 /******/ ])
